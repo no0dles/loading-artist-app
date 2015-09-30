@@ -1,0 +1,40 @@
+<ion-header-bar align-title="left" class="bar-balanced">
+  <div class="buttons">
+    <button class="button button-icon button-clear ion-ios-arrow-back" ui-sref="comic.grid">
+      Settings
+    </button>
+  </div>
+</ion-header-bar>
+
+<ion-view>
+  <ion-content>
+    <ion-list class="wrapping-list">
+      <div class="item item-divider">
+        App
+      </div>
+      <ion-item ng-click="checkForUpdates()">
+        Version <span app-version></span>
+      </ion-item>
+      <ion-item ng-show="hasUpdate">
+        <img src="img/update.png" style="max-width:100%" ng-click="doUpdate()">
+      </ion-item>
+      <div class="item item-divider">
+        Loading Artist
+      </div>
+      <ion-item ng-click="supportSite()">
+        Become a Patreon
+      </ion-item>
+      <ion-item ng-click="officialSite()">
+        Link to the official site
+      </ion-item>
+      <div class="item item-divider">
+        Disclaimer
+      </div>
+      <ion-item style="font-size: 10pt;">
+        This app is an unofficial viewer application for www.loadingartist.com.
+        This app is not affiliated with the comic or content creator. All images, text and video content are copyright to their respective owners.
+        This app acts as a mobile viewer for the official website.
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

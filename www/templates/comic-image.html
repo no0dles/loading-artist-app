@@ -1,0 +1,38 @@
+<ion-header-bar align-title="left" class="bar-balanced">
+  <div class="buttons">
+    <button class="button button-icon button-clear ion-grid" ui-sref="comic.grid({id: comic.comic_id})">
+    </button>
+  </div>
+  <h1 class="title">{{comic.title}}</h1>
+  <div class="buttons">
+    <button class="button button-icon button-clear ion-ios-upload-outline" ng-click="showMenu()">
+    </button>
+  </div>
+</ion-header-bar>
+
+<ion-view>
+  <ion-content class="animated fadeIn">
+    <div class="comic-image">
+      <img ng-src="{{url}}" class="animated fadeIn" image-onload="imageLoaded()"/>
+    </div>
+  </ion-content>
+  <ion-spinner icon="dots" ng-hide="loaded" class="spinner-balanced"></ion-spinner>
+</ion-view>
+
+
+<ion-footer-bar class="bar-dark">
+  <div class="col-25 grid">
+    <button class="button button-icon button-clear ion-ios-arrow-left" ng-show="nextComic.comic_id" ng-click="next()">
+    </button>
+  </div>
+
+  <div class="col-50 favorite">
+    <button class="button button-icon button-clear" ng-click="favoriteComic()" ng-class="comic.favorite ? 'ion-android-favorite icon-favorite' : 'ion-android-favorite-outline'">
+    </button>
+  </div>
+
+  <div class="col-25 share">
+    <button class="button button-icon button-clear ion-ios-arrow-right" ng-show="prevComic.comic_id" ng-click="prev()">
+    </button>
+  </div>
+</ion-footer-bar>

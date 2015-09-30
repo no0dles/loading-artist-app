@@ -1,0 +1,20 @@
+<ion-header-bar align-title="left" class="bar-balanced">
+
+  <h1 class="title">Loading Artist</h1>
+  <div class="buttons">
+    <button class="button button-icon button-clear ion-ios-loop-strong" ng-click="sync()" ng-class="syncing ? 'rotating' : ''">
+    </button>
+  </div>
+</ion-header-bar>
+
+<ion-view view-title="Loading Artist">
+  <ion-content>
+    <grid class="comic-grid" comics="comics" max-size="200" min-columns="3" padding="5"></grid>
+  </ion-content>
+</ion-view>
+
+<ion-footer-bar class="bar-balanced">
+  <div class="buttons">
+    <button class="button button-icon button-clear ion-ios-gear" ui-sref="settings"></button>
+  </div>
+</ion-footer-bar>

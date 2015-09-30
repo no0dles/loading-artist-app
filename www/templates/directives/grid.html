@@ -1,0 +1,9 @@
+<div>
+  <ion-item class="comic-item" ng-style="itemStyle()" collection-repeat="comic in comics">
+    <a class="comic-thumb" ui-sref="comic.image({id: comic.comic_id})">
+      <img ng-src="{{comic.thumb_url}}" ng-show="comic.loaded" image-onload="imageLoaded(comic)"/>
+      <ion-spinner icon="dots" ng-hide="comic.loaded" class="spinner-balanced"></ion-spinner>
+      <i ng-show="comic && comic.loaded && comic.favorite" class="icon ion-android-favorite icon-favorite thumb-favorite"></i>
+    </a>
+  </ion-item>
+</div>
